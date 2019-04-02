@@ -7,13 +7,15 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-execute": "^0.2.2",
     "hbs": "^4.0.3",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node src/app.js"
+    
   },
   "keywords": [],
   "author": "",

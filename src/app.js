@@ -2,7 +2,7 @@
 const path = require('path')
 const express = require('express')
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 //Define Paths for express config
 const publicDir = path.join(__dirname,'../public')
@@ -23,13 +23,12 @@ app.get('/',(req,res)=>{
 
 app.get('*',(req,res)=>{
   res.send('404 - page not found!')
-
 })
 
 
-//change to 80 during deployment
+
 app.listen(port, ()=>{
-  console.log('server started on port 3000')
+  console.log('server started on port '+port)
 })
 
 
