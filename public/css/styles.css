@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/* CSS document for Index*/
+
+
+body{
+    background-color: rgba(0, 0, 0, 0.582);
+    color:blanchedalmond
+}
+h1 {
+    color:crimson;
+    background-color: black;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:45px;
+    margin-top: 0;
+    padding:5px;
+}  
+h2 {
+    color:rgb(40, 200, 228);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}  

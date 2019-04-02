@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang='en'>
+
+    <head>
+        <!-- Installin Jquery and bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/css/styles.css">
+        <script src='/js/app.js'></script>
+
+        <title>Dragonfire Character Generator</title>
+
+    </head>
+
+    <body>
+        
+        <div>
+            
+            <h1> 
+                <img src="images/Dragonfire Title.JPG" width="100%" alt="title name">
+                <p style=text-align:center;>{{title}}</p>
+            </h1>
+            <h2>
+                Login or Logout
+
+            </h2>
+            <h3>
+                <div class = "container" id="charBasics">
+                    Character Name:<input id="charName" type="text" value="Enter Name Here">
+                    Character Exp:<input id="charExp" type="number" value=0>
+                    Race:<select id="charRace">
+                            <option value='Elf'>Elf</option>
+                            <option value='Dwarf'>Dwarf</option>
+                            <option value='Human'>Human</option>
+                            <option value='Half-Elf'>Half-Elf</option>
+                    </select>
+                    Class:<select id="charClass">
+                        <option value='Wizard'>Wizard</option>
+                        <option value="Fighter">Fighter</option>
+                        <option value="Rogue">Rogue</option>
+                        <option value="Cleric">Cleric</option>
+                    </select>
+                    <button id="calcStats" onclick="calcStats()">Calculate Stats</button>
+                    <div id="messageBox">test output</div>
+                </div>
+
+            </h3>
+
+        </div>
+        <div class="container">
+            <h2>Stats</h2>
+            <table class="table table-dark table-responsive table-bordered" >
+                <thead>
+                    <tr>
+                        <th>Arcane</th>
+                        <th>Martial</th>
+                        <th>Deception</th>
+                        <th>Devotion</th>
+                        <th>Hand</th>
+                        <th>Gold</th>
+                        <th>Max HP</th>
+                    </tr>
+                </thead>
+                <tbody id='stats'>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>   
+                </tbody>
+            </table>
+
+
+        </div>
+
+        <script>
+            var _name = document.getElementById("charName").value;
+            var _race = document.getElementById("charRace").value;
+            var _class = document.getElementById("charClass").value;
+            var _exp = parseInt(document.getElementById("charExp").value);
+            var stats = [1,1,1,1,1,1,1];
+            var toggle=1;
+           function calcStats(){
+                _name = document.getElementById("charName").value;
+                _race = document.getElementById("charRace").value;
+                _class = document.getElementById("charClass").value;
+                _exp = parseInt(document.getElementById("charExp").value);
+                document.getElementById("messageBox").innerHTML = _name+" "+_race+" "+_class+" "+_exp;
+                var x=document.getElementById('stats').rows;
+                var y=x[0].cells;
+                if (toggle==1){
+                    for (i=0; i<y.length;i++){
+                        y[i].innerHTML=1;
+                    }
+                }else{
+                    for (i=0; i<y.length;i++){
+                        y[i].innerHTML=2;
+                    }
+                }
+                toggle = (toggle+1)%2;
+
+            }
+
+
+        
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+
+</html>
