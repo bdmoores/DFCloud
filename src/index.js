@@ -1,14 +1,29 @@
 //app.js
 const path = require('path')
 const express = require('express')
+require('./db/mongoose')
+const User = require('./models/user')
+
 const app = express()
 const port = process.env.PORT || 3000
+
+
 
 //Define Paths for express config
 const publicDir = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
 
-//setup handlebars enjine and views location
+//define paths for routers
+const userRouter = require('./routers/user')
+
+
+app.use(express.json())
+app.use(userRouter)
+
+
+
+const router = new express.Router()
+//setup handlebars engine and views location
 app.set('view engine', 'hbs')
 app.set('views',viewsPath)
 
@@ -21,14 +36,12 @@ app.get('/',(req,res)=>{
   })
 })
 
-app.get('*',(req,res)=>{
-  res.send('404 - page not found!')
+app.listen(port, ()=>{
+  console.log('Server started on port '+port)
 })
 
-
-
-app.listen(port, ()=>{
-  console.log('server started on port '+port)
+app.get('*',(req,res)=>{
+  res.send('404 - page not found!')
 })
 
 

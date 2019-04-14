@@ -3,22 +3,35 @@
   "version": "1.0.0",
   "main": "app.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.16.4",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-execute": "^0.2.2",
     "hbs": "^4.0.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.2.2",
+    "mongoose": "^5.4.21",
     "mysql": "^2.16.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "validator": "^10.11.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
   },
   "scripts": {
-    "start":"node src/app.js"
-    
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdmoores/DFCloud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bdmoores/DFCloud/issues"
+  },
+  "homepage": "https://github.com/bdmoores/DFCloud#readme",
   "description": ""
 }

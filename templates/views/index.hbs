@@ -2,7 +2,7 @@
 <html lang='en'>
 
     <head>
-        <!-- Installin Jquery and bootstrap-->
+        <!-- Installing Jquery and bootstrap-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,14 +28,16 @@
             <h3>
                 <div class = "container" id="charBasics">
                     Character Name:<input id="charName" type="text" value="Enter Name Here">
+                    <!-- Not implimented this build
                     Character Exp:<input id="charExp" type="number" value=0>
+                    -->
                     Race:<select id="charRace">
-                            <option value='Elf'>Elf</option>
-                            <option value='Dwarf'>Dwarf</option>
+                            <option value='Elf-Sun'>Elf-Sun</option>
+                            <option value='Dwarf-Gold'>Dwarf-Gold</option>
                             <option value='Human'>Human</option>
                             <option value='Half-Elf'>Half-Elf</option>
                     </select>
-                    Class:<select id="charClass">
+                    Class:<select id="charClass" default="">
                         <option value='Wizard'>Wizard</option>
                         <option value="Fighter">Fighter</option>
                         <option value="Rogue">Rogue</option>
@@ -60,10 +62,11 @@
                         <th>Hand</th>
                         <th>Gold</th>
                         <th>Max HP</th>
+                        <th>Role</th>
                     </tr>
                 </thead>
                 <tbody id='stats'>
-                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                     </tr>   
                 </tbody>
             </table>
@@ -75,25 +78,27 @@
             var _name = document.getElementById("charName").value;
             var _race = document.getElementById("charRace").value;
             var _class = document.getElementById("charClass").value;
-            var _exp = parseInt(document.getElementById("charExp").value);
-            var stats = [1,1,1,1,1,1,1];
+            // not implimented var _exp = parseInt(document.getElementById("charExp").value);
+            var stats = [];
             var toggle=1;
            function calcStats(){
                 _name = document.getElementById("charName").value;
                 _race = document.getElementById("charRace").value;
                 _class = document.getElementById("charClass").value;
-                _exp = parseInt(document.getElementById("charExp").value);
-                document.getElementById("messageBox").innerHTML = _name+" "+_race+" "+_class+" "+_exp;
+                // not implimented _exp = parseInt(document.getElementById("charExp").value);
+                document.getElementById("messageBox").innerHTML = _name+" "+_race+" "+_class;
                 var x=document.getElementById('stats').rows;
                 var y=x[0].cells;
                 if (toggle==1){
                     for (i=0; i<y.length;i++){
                         y[i].innerHTML=1;
                     }
+                    y[7].innerHTML = 'Arcane'
                 }else{
                     for (i=0; i<y.length;i++){
                         y[i].innerHTML=2;
                     }
+                    y[7].innerHTML = 'Martial'
                 }
                 toggle = (toggle+1)%2;
 
