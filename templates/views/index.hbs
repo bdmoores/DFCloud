@@ -7,7 +7,7 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="/css/styles.css">
-        <script src='/js/app.js'></script>
+        
 
         <title>Dragonfire Character Generator</title>
 
@@ -25,29 +25,37 @@
                 Login or Logout
 
             </h2>
-            <h3>
-                <div class = "container" id="charBasics">
-                    Character Name:<input id="charName" type="text" value="">
-                    <!-- Not implimented this build
-                    Character Exp:<input id="charExp" type="number" value=0>
-                    -->
-                    Race:<select id="charRace">
-                        <option value='Human'>Human</option>
-                        <option value='Elf'>Elf</option>
-                        <option value='Dwarf'>Dwarf</option>
-                            
-                    </select>
-                    Class:<select id="charClass" default="">
-                        <option value='Wizard'>Wizard</option>
-                        <option value="Fighter">Fighter</option>
-                        <option value="Rogue">Rogue</option>
-                        <option value="Cleric">Cleric</option>
-                    </select>
-                    <button id="calcStats" onclick="calcStats()">Calculate Stats</button>
-                    <div id="messageBox"></div>
-                </div>
+            <form>
+                <h3>
+                    <div class = "container" id="charBasics">
+                        Character Name:<input id="charName" type="text" value="">
+                        <!-- Not implimented this build
+                        Character Exp:<input id="charExp" type="number" value=0>
+                        -->
+                        Race:<select id="charRace">
+                            <option value='Human'>Human</option>
+                            <option value='Elf'>Elf</option>
+                            <option value='Dwarf'>Dwarf</option>
+                            <option value='Dragonborn'>Dragonborn</option>
+                            <option value='Half-Elf'>Half-Elf</option>
+                            <option value='Halfling'>Halfling</option>
+                            <option value='Half-Orc'>Half-Orc</option>
+                            <option value='Tiefling'>Tiefling</option>
 
-            </h3>
+                                
+                        </select>
+                        Class:<select id="charClass">
+                            <option value='Wizard'>Wizard</option>
+                            <option value="Fighter">Fighter</option>
+                            <option value="Rogue">Rogue</option>
+                            <option value="Cleric">Cleric</option>
+                        </select>
+                        <button id="calcStats">Calculate Stats</button>
+                        <div id="messageBox"></div>
+                    </div>
+
+                </h3>
+            </form>
 
         </div>
         <div class="container">
@@ -80,7 +88,7 @@
             // not implimented var _exp = parseInt(document.getElementById("charExp").value);
             var stats = [];
             var toggle=1;
-           function calcStats(){
+/*           function calcStats(){
                 _name = document.getElementById("charName").value;
                 _race = document.getElementById("charRace").value;
                 _class = document.getElementById("charClass").value;
@@ -126,7 +134,7 @@
                     y[i].innerHTML=raceStats[i]+classStats[i];
                 }
             }
-
+*/
 
         
         </script>
@@ -134,6 +142,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src='/js/app.js'></script>
     </body>
 
 </html>
