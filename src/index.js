@@ -3,6 +3,7 @@ const path = require('path')
 const express = require('express')
 require('./db/mongoose')
 const User = require('./models/user')
+const Stats = require('./models/stats')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -15,11 +16,11 @@ const viewsPath = path.join(__dirname,'../templates/views')
 
 //define paths for routers
 const userRouter = require('./routers/user')
-
+const statsRouter = require('./routers/stats')
 
 app.use(express.json())
 app.use(userRouter)
-
+app.use(statsRouter)
 
 
 const router = new express.Router()
@@ -40,9 +41,19 @@ app.listen(port, ()=>{
   console.log('Server started on port '+port)
 })
 
+
+
+// app.get('/products', (req, res)=>{
+//   console.log(req.query.search)
+//   res.send({
+//     products:[]
+//   })
+// })
+
+
+
+
 app.get('*',(req,res)=>{
   res.send('404 - page not found!')
 })
-
-
 

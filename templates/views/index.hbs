@@ -32,10 +32,9 @@
                     Character Exp:<input id="charExp" type="number" value=0>
                     -->
                     Race:<select id="charRace">
-                            <option value='Elf-Sun'>Elf-Sun</option>
-                            <option value='Dwarf-Gold'>Dwarf-Gold</option>
+                            <option value='Elf'>Elf</option>
+                            <option value='Dwarf'>Dwarf</option>
                             <option value='Human'>Human</option>
-                            <option value='Half-Elf'>Half-Elf</option>
                     </select>
                     Class:<select id="charClass" default="">
                         <option value='Wizard'>Wizard</option>
@@ -62,11 +61,10 @@
                         <th>Hand</th>
                         <th>Gold</th>
                         <th>Max HP</th>
-                        <th>Role</th>
                     </tr>
                 </thead>
                 <tbody id='stats'>
-                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
                     </tr>   
                 </tbody>
             </table>
@@ -85,23 +83,47 @@
                 _name = document.getElementById("charName").value;
                 _race = document.getElementById("charRace").value;
                 _class = document.getElementById("charClass").value;
+
                 // not implimented _exp = parseInt(document.getElementById("charExp").value);
-                document.getElementById("messageBox").innerHTML = _name+" "+_race+" "+_class;
+                document.getElementById("messageBox").innerHTML = 'Testing';
+
+                var Dwarf=[2,2,2,3,2,2,3]
+                var Elf=[3,1,2,2,3,2,1]
+                var Human = [2,2,2,2,2,2,2]
+                var raceStats=[]
+                if (_race==='Human'){
+                    raceStats=Human
+                }else if(_race==='Elf'){
+                    raceStats=Elf
+                }else{
+                    raceStats=Dwarf
+                }
+                console.log(_class)
+                var Wizard = [2,-1,-1,-1,2,2,4]
+                var Cleric = [-1,-1,0,2,2,2,6]
+                var Rogue = [-1,0,2,-1,1,2,7]
+                var Fighter = [-1,2,-1,-1,1,0,8]
+                var classStats =[]
+                console.log(classStats)
+                if (_class === 'Fighter'){
+                    classStats = Fighter
+                }else if (_class === 'Cleric'){
+                    classStats = Cleric
+                }else if (_class === 'Rogue'){
+                    classStats = Rogue
+                }else{
+                    classStats = Wizard
+                }
+                console.log(classStats)
+
+
+
+
                 var x=document.getElementById('stats').rows;
                 var y=x[0].cells;
-                if (toggle==1){
-                    for (i=0; i<y.length;i++){
-                        y[i].innerHTML=1;
-                    }
-                    y[7].innerHTML = 'Arcane'
-                }else{
-                    for (i=0; i<y.length;i++){
-                        y[i].innerHTML=2;
-                    }
-                    y[7].innerHTML = 'Martial'
+                for (i=0; i<y.length;i++){
+                    y[i].innerHTML=raceStats[i]+classStats[i];
                 }
-                toggle = (toggle+1)%2;
-
             }
 
 

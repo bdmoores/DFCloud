@@ -13,3 +13,8 @@ Database
 REST Development and Testing
     mongoose
     postman
+Authetication
+    Hashing
+        bcryptjs
+    Tokens
+        jsonwebtoken

@@ -13,7 +13,7 @@ const databaseName = 'dragonfire'
 
 MongoClient.connect(connectionURL, {useNewUrlParser:true}, (error, client)=>{
     if(error){
-        return console.log("Unable to conenct to database.")
+        return console.log("Unable to connect to database.")
     }
 
     const db=client.db(databaseName)
