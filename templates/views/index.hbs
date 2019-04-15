@@ -27,14 +27,15 @@
             </h2>
             <h3>
                 <div class = "container" id="charBasics">
-                    Character Name:<input id="charName" type="text" value="Enter Name Here">
+                    Character Name:<input id="charName" type="text" value="">
                     <!-- Not implimented this build
                     Character Exp:<input id="charExp" type="number" value=0>
                     -->
                     Race:<select id="charRace">
-                            <option value='Elf'>Elf</option>
-                            <option value='Dwarf'>Dwarf</option>
-                            <option value='Human'>Human</option>
+                        <option value='Human'>Human</option>
+                        <option value='Elf'>Elf</option>
+                        <option value='Dwarf'>Dwarf</option>
+                            
                     </select>
                     Class:<select id="charClass" default="">
                         <option value='Wizard'>Wizard</option>
@@ -43,7 +44,7 @@
                         <option value="Cleric">Cleric</option>
                     </select>
                     <button id="calcStats" onclick="calcStats()">Calculate Stats</button>
-                    <div id="messageBox">test output</div>
+                    <div id="messageBox"></div>
                 </div>
 
             </h3>
@@ -85,7 +86,7 @@
                 _class = document.getElementById("charClass").value;
 
                 // not implimented _exp = parseInt(document.getElementById("charExp").value);
-                document.getElementById("messageBox").innerHTML = 'Testing';
+                document.getElementById("messageBox").innerHTML = _name + ' a ' + _race + ' ' +_class;
 
                 var Dwarf=[2,2,2,3,2,2,3]
                 var Elf=[3,1,2,2,3,2,1]
